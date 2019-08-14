@@ -28,6 +28,8 @@ public class TaskNamespaceHandler extends NamespaceHandlerSupport {
 
 	@Override
 	public void init() {
+		// annotation-driven解析器注册，
+		// 后续会调用AnnotationDrivenBeanDefinitionParser.parse(Element element, ParserContext parserContext)方法进行解析
 		this.registerBeanDefinitionParser("annotation-driven", new AnnotationDrivenBeanDefinitionParser());
 		this.registerBeanDefinitionParser("executor", new ExecutorBeanDefinitionParser());
 		this.registerBeanDefinitionParser("scheduled-tasks", new ScheduledTasksBeanDefinitionParser());
